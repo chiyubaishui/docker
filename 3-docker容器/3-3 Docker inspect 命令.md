@@ -33,3 +33,6 @@ runoob@runoob:~$ docker inspect mysql:5.6
 获取正在运行的容器mymysql的 IP。
 runoob@runoob:~$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mymysql
 172.17.0.3
+
+查看映射卷
+docker inspect --format '{{.Mounts}}' redis-master 
