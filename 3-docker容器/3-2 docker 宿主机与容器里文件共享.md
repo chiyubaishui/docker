@@ -45,3 +45,15 @@ docker run --name test2 -it --volumes-from test1  ubuntu  /bin/bash
 也可以是同一镜像，如：
 docker run --name test3 -it --volumes-from test1  myimage  /bin/bash
 上面的三个容器 test1 , test2 , test3 均有 /data1 和 /data2 两个目录，且目录中内容是共享的，任何一个容器修改了内容，别的容器都能获取到。
+
+
+
+在docker container和物理机中双向拷贝文件
+容器内部文件拷贝到宿主机：
+sh-4.2# docker cp jupyter-70002111:/home/70002111/教程-研究功能介绍.ipynb .
+sh-4.2# ls
+Dockerfile  教程-研究功能介绍.ipynb
+宿主机文件拷贝到容器：
+sh-4.2# docker cp Dockerfile jupyter-70002111:/home/70002111/
+sh-4.2# docker exec -it jupyter-70002188 ls 
+Dockerfile
