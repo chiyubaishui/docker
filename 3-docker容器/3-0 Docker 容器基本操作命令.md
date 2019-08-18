@@ -1,7 +1,10 @@
 容器命令
 ①：运行镜像
 
-docker run - --name container-name -d image-name
+docker run -it --name container-name -d image-name
+-d: 后台运行容器，并返回容器ID；
+-i: 以交互模式运行容器，通常与 -t 同时使用；
+-t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用；
 
 ②：查看容器列表
 
